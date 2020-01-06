@@ -1,7 +1,7 @@
 # 📚 MemoryCLIP Dresden
 
 This is a project to remind of the bomb war and especially the attack on Dresden at the 13./14. February 1945.<br>
-This is a school project created by students of the 9th grade.
+It is a school project created by students of the 9th grade.
 
 ## 🤨 How does it work?
 
