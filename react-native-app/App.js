@@ -25,7 +25,7 @@ export default class App extends React.Component {
     console.log(query);
     this.setState({ search: query });
     let response = await axios.get(
-      'https://gewibackend.hannsadrian.de/query/building?name=' + query
+      'https://memoryclip.hannsadrian.de/query/building?name=' + query
     );
     this.setState({ results: response.data });
     console.log(this.state.results);
