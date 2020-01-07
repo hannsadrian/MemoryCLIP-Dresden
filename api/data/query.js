@@ -1,185 +1,62 @@
-var LatLon = require('mt-latlon');
-const fs = require('fs')
+let LatLon = require('mt-latlon');
 
-let buildings = require('./buildings.json');
-let places = require('./places.json');
-let depots = require("./mahndepots.json")
-let stolpersteine = require("./stolpersteine.json")
+let entries = require('./entries.json');
 
-// Buildings
+function getByID(id) {
+  let found = [];
 
-function getBuildingByID(id) {
-  found = [];
-
-  buildings.forEach(building => {
-    if (building.id.toString() === id.toString()) {
-      found.push(building)
+  entries.forEach(entry => {
+    if (entry.id.toString() === id.toString()) {
+      found.push(entry);
     }
-  })
+  });
 
   return found;
 }
 
-function getBuildingByName(query) {
-  found = [];
+function getByName(query, types) {
+  let found = [];
 
-  buildings.forEach(building => {
-    if (building.name.toLowerCase().includes(query.toLowerCase())) {
-      found.push(building)
+  entries.forEach(entry => {
+    if (entry.name.toLowerCase().includes(query.toLowerCase())) {
+      if (hasType(entry, types))
+        found.push(entry);
     }
-  })
+  });
 
   return found;
 }
 
-function getBuildingByCoordinates(lat, lng) {
-  found = [];
+function getByCoordinates(lat, lng, types) {
+  let found = [];
 
-  buildings.forEach(building => {
+  entries.forEach(entry => {
     const p1 = new LatLon(lat, lng);
-    const p2 = new LatLon(building.coordinates.lat, building.coordinates.lng);
+    const p2 = new LatLon(entry.coordinates.lat, entry.coordinates.lng);
     const dist = p1.distanceTo(p2);
 
     if (dist < 0.25) {
-      building.distanceInM = dist*1000;
-      found.push(building)
+      entry.distanceInM = dist*1000;
+      if (hasType(entry, types))
+        found.push(entry);
     }
-  })
+  });
 
   return found;
 }
 
-// Places
+function hasType(entry, types) {
+  if (types.length === 0)
+    return true;
 
-function getPlaceByID(id) {
-  found = [];
-
-  places.forEach(place => {
-    if (place.id.toString() === id.toString()) {
-      found.push(place)
-    }
-  })
-
-  return found;
-}
-
-function getPlaceByName(query) {
-  found = [];
-
-  places.forEach(place => {
-    if (place.name.toLowerCase().includes(query.toLowerCase())) {
-      found.push(place)
-    }
-  })
-
-  return found;
-}
-
-function getPlaceByCoordinates(lat, lng) {
-  found = [];
-
-  places.forEach(place => {
-    const p1 = new LatLon(lat, lng);
-    const p2 = new LatLon(place.coordinates.lat, place.coordinates.lng);
-    const dist = p1.distanceTo(p2);
-
-    if (dist < 0.25) {
-      place.distanceInM = dist*1000;
-      found.push(place)
-    }
-  })
-
-  return found;
-}
-
-// Mahndepot
-
-function getDepotByID(id) {
-  found = [];
-
-  depots.forEach(depot => {
-    if (depot.id.toString() === id.toString()) {
-      found.push(depot)
-    }
-  })
-
-  return found;
-}
-
-function getDepotByName(query) {
-  found = [];
-
-  depots.forEach(depot => {
-    if (depot.name.toLowerCase().includes(query.toLowerCase())) {
-      found.push(depot)
-    }
-  })
-
-  return found;
-}
-
-function getDepotByCoordinates(lat, lng) {
-  found = [];
-
-  depots.forEach(depot => {
-    const p1 = new LatLon(lat, lng);
-    const p2 = new LatLon(depot.coordinates.lat, depot.coordinates.lng);
-    const dist = p1.distanceTo(p2);
-
-    if (dist < 0.25) {
-      depot.distanceInM = dist*1000;
-      found.push(depot)
-    }
-  })
-
-  return found;
-}
-
-// Stolperstein
-
-function getStolpersteinByID(id) {
-  found = [];
-
-  stolpersteine.forEach(stolperstein => {
-    if (stolperstein.id.toString() === id.toString()) {
-      found.push(stolperstein)
-    }
-  })
-
-  return found;
-}
-
-function getStolpersteinByName(query) {
-  found = [];
-
-  stolpersteine.forEach(stolperstein => {
-    if (stolperstein.name.toLowerCase().includes(query.toLowerCase())) {
-      found.push(stolperstein)
-    }
-  })
-
-  return found;
-}
-
-function getStolpersteinByCoordinates(lat, lng) {
-  found = [];
-
-  stolpersteine.forEach(stolperstein => {
-    const p1 = new LatLon(lat, lng);
-    const p2 = new LatLon(stolperstein.coordinates.lat, stolperstein.coordinates.lng);
-    const dist = p1.distanceTo(p2);
-
-    if (dist < 0.25) {
-      stolperstein.distanceInM = dist*1000;
-      found.push(stolperstein)
-    }
-  })
-
-  return found;
+  let hasType = false;
+  types.forEach(type => {
+    if (entry.type === type)
+      hasType = true;
+  });
+  return hasType;
 }
 
 module.exports = { 
-  getBuildingByName, getBuildingByCoordinates, getBuildingByID, getPlaceByName, getPlaceByCoordinates, getPlaceByID,
-  getDepotByName, getDepotByCoordinates, getDepotByID,
-  getStolpersteinByName, getStolpersteinByCoordinates, getStolpersteinByID
- }
+  getByName, getByCoordinates, getByID
+};
