@@ -3,7 +3,7 @@
     "id": 0,
     "name": "Frauenkirche",
     "type": "building",
-    "img": "PLACEHOLDER",
+    "img": "https://cdn.prod.www.spiegel.de/images/d3023b4a-0001-0004-0000-000000593823_w920_r1.447178002894356_fpx55.25_fpy50.jpg",
     "coordinates": {
       "lat": 51.051858,
       "lng": 13.741312
@@ -14,7 +14,7 @@
     "id": 1,
     "name": "Kreuzkirche",
     "type": "building",
-    "img": "PLACEHOLDER",
+    "img": "https://cdn.prod.www.spiegel.de/images/52605a11-0001-0004-0000-000000600366_w860_r1.3716108452950557_fpx32.8_fpy54.87.jpg",
     "coordinates": {
       "lat": 51.048952,
       "lng": 13.738766
@@ -25,7 +25,7 @@
     "id": 2,
     "name": "Altmarkt",
     "type": "place",
-    "img": "PLACEHOLDER",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/0/01/Bundesarchiv_Bild_183-08778-0001%2C_Dresden%2C_Tote_nach_Bombenangriff.jpg",
     "coordinates": {
       "lat": 51.049678,
       "lng": 13.737975
