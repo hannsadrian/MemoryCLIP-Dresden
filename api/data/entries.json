@@ -36,7 +36,7 @@
     "id": 3,
     "name": "Ort 70: Weiße Gasse 5/7",
     "type": "depot",
-    "img": "PLACEHOLDER",
+    "img": "http://www.mahndepots.de/wordpress/wp-content/uploads/2016/09/DSC_2529-197x300.jpg",
     "coordinates": {
       "lat": 51.049499,
       "lng": 13.740404
@@ -47,7 +47,7 @@
     "id": 4,
     "name": "Seestraße 7",
     "type": "stolperstein",
-    "img": "PLACEHOLDER",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Stolperstein_Dresden_Schneck_Jutta.jpg",
     "coordinates": {
       "lat": 51.04812,
       "lng": 13.736936
