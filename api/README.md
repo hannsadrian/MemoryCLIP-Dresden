@@ -4,7 +4,7 @@ This is the backend of MemoryCLIP. It provides the necessary data to the app and
 
 ## Routes
 
-The api is currently available at [memoryclip.hannsadrian.de](https://memoryclip.hannsadrian.de/)
+The api is currently available at [api.memoryclip.hannsadrian.de](https://api.memoryclip.hannsadrian.de/)
 
 ### `/query`
 Search for a poi.
@@ -22,7 +22,7 @@ Search for a poi.
 
 **Example response:**
 
-`GET https://memoryclip.hannsadrian.de/query?name=Kirche&only=building`
+`GET https://api.memoryclip.hannsadrian.de/query?name=Kirche&only=building`
 
 ```
 [
@@ -62,7 +62,7 @@ Query a specific entry.
 
 **Example response:**
 
-`GET https://memoryclip.hannsadrian.de/entry?id=4`
+`GET https://api.memoryclip.hannsadrian.de/entry?id=4`
 
 ```
 [
