@@ -5,6 +5,8 @@ var app = express();
 app.use(cors());
 const port = process.env.PORT || "8000";
 
+app.use('/static', express.static('static'));
+
 app.get("/", (req, res) => {
   res.status(200).send({
     apiName: "MemoryCLIP-Dresden",
