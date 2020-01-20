@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { Text, View, Image, ScrollView, StyleSheet } from 'react-native';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import {Text, View, Image, ScrollView, StyleSheet, Button} from 'react-native';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import Constants from 'expo-constants';
-import Filters from './Filters';
+import * as Location from 'expo-location';
+import * as Permissions from 'expo-permissions';
 
 import {
     Title,
@@ -21,24 +22,47 @@ export default class Start extends React.Component {
         results: [],
     };
 
-    static navigationOptions = {
-    };
-
     async search(query) {
-        this.setState({ search: query });
+        this.setState({search: query});
+        if (query.length === 0) {
+            this.setState({results: []});
+            this.locationSuggestions();
+            return;
+        }
         let response = await axios.get(
             'https://api.memoryclip.hannsadrian.de/query?name=' + query
         );
-        this.setState({ results: response.data });
+        this.setState({results: response.data});
     }
 
+    async locationSuggestions() {
+        let {status} = await Permissions.askAsync(Permissions.LOCATION);
+        if (status !== 'granted') {
+            this.setState({
+                errorMessage: 'Permission to access location was denied',
+            });
+        }
+
+        let location = await Location.getCurrentPositionAsync({});
+
+        let response = await axios.get(
+            'https://api.memoryclip.hannsadrian.de/query?lat=' + location.coords.latitude + "&lng=" + location.coords.longitude
+        );
+        this.setState({results: response.data});
+    }
+
+    componentDidMount() {
+        this.locationSuggestions();
+    }
+
+
     render() {
-        const { search, results } = this.state;
+        const {search, results} = this.state;
         const {navigate} = this.props.navigation;
         return (
             <KeyboardAwareScrollView
                 scrollEnabled={false}
-                extraScrollHeight={225}
+                extraScrollHeight={results.length === 0 ? 275 : 215}
                 keyboardDismissMode="on-drag">
                 <View style={styles.container}>
                     <View style={styles.heading}>
@@ -48,39 +72,40 @@ export default class Start extends React.Component {
                             vielen Orten in Bezug auf die Bombardierung Dresdens bieten.
                         </Text>
                     </View>
-                    <View style={{ flexDirection: 'row', marginTop: 10 }}>
+                    <View style={{flexDirection: 'row', marginTop: 10, paddingBottom: 15}}>
                         <Searchbar
                             placeholder="Ort suchen"
                             onChangeText={query => {
                                 this.search(query);
                             }}
                             value={search}
-                            style={{ flex: 2 }}
+                            style={{flex: 2}}
                         />
                         <IconButton
                             icon="qrcode"
                             mode="text"
                             size={25}
-                            style={{ marginLeft: 15, marginTop: 7.5 }}
+                            style={{marginLeft: 15, marginTop: 7.5}}
                             animated={true}
                             onPress={() => navigate("Scan")}
                         />
                     </View>
-                    <Filters />
                 </View>
                 <ScrollView style={styles.scroll}>
                     {results.map((value, index) => {
                         return (
-                            <Card key={index} style={{ marginBottom: 10 }} onPress={() => {console.log("clicked " + value.name)}}>
+                            <Card key={index} style={{marginBottom: 10}} onPress={() => {
+                                navigate("Article", {id: parseInt(value.id)})
+                            }}>
                                 <Card.Title
                                     title={value.name}
                                     subtitle={value.article}
                                     left={props => (
                                         <Image
-                                            style={{ width: 45, height: 45, borderRadius: 100 }}
+                                            style={{width: 45, height: 45, borderRadius: 100}}
                                             source={{
                                                 uri:
-                                                value.img,
+                                                    value.img[0],
                                             }}
                                         />
                                     )}

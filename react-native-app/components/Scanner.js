@@ -59,11 +59,6 @@ export default function Scanner(props) {
                     </B>
                 </Card.Actions>
             </Card>
-
-
-            {scanned && (
-                <Button title={'Tap to Scan Again'} onPress={() => setScanned(false)} />
-            )}
         </View>
     );
 }
