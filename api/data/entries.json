@@ -3,7 +3,7 @@
     "id": 0,
     "name": "Frauenkirche",
     "type": "building",
-    "img": "https://cdn.prod.www.spiegel.de/images/d3023b4a-0001-0004-0000-000000593823_w920_r1.447178002894356_fpx55.25_fpy50.jpg",
+    "img": ["https://cdn.prod.www.spiegel.de/images/d3023b4a-0001-0004-0000-000000593823_w920_r1.447178002894356_fpx55.25_fpy50.jpg"],
     "coordinates": {
       "lat": 51.051858,
       "lng": 13.741312
@@ -14,7 +14,7 @@
     "id": 1,
     "name": "Kreuzkirche",
     "type": "building",
-    "img": "https://cdn.prod.www.spiegel.de/images/52605a11-0001-0004-0000-000000600366_w860_r1.3716108452950557_fpx32.8_fpy54.87.jpg",
+    "img": ["https://cdn.prod.www.spiegel.de/images/52605a11-0001-0004-0000-000000600366_w860_r1.3716108452950557_fpx32.8_fpy54.87.jpg"],
     "coordinates": {
       "lat": 51.048952,
       "lng": 13.738766
@@ -25,7 +25,7 @@
     "id": 2,
     "name": "Altmarkt",
     "type": "place",
-    "img": "https://upload.wikimedia.org/wikipedia/commons/0/01/Bundesarchiv_Bild_183-08778-0001%2C_Dresden%2C_Tote_nach_Bombenangriff.jpg",
+    "img": ["https://upload.wikimedia.org/wikipedia/commons/0/01/Bundesarchiv_Bild_183-08778-0001%2C_Dresden%2C_Tote_nach_Bombenangriff.jpg"],
     "coordinates": {
       "lat": 51.049678,
       "lng": 13.737975
@@ -36,7 +36,8 @@
     "id": 3,
     "name": "Ort 70: Weiße Gasse 5/7",
     "type": "depot",
-    "img": "http://www.mahndepots.de/wordpress/wp-content/uploads/2016/09/DSC_2529-197x300.jpg",
+    "img": ["https://upload.wikimedia.org/wikipedia/commons/1/13/Dresden_-_Schlussstein_am_Torbogen_Wei%C3%9Fe_Gasse_5_7.jpg", "http://www.mahndepots.de/wordpress/wp-content/uploads/2016/09/DSC_2529-197x300.jpg"],
+    "link": {"name": "Internetseite der Mahndepots", "ref": "http://www.mahndepots.de/"},
     "coordinates": {
       "lat": 51.049499,
       "lng": 13.740404
@@ -47,7 +48,8 @@
     "id": 4,
     "name": "Seestraße 7",
     "type": "stolperstein",
-    "img": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Stolperstein_Dresden_Schneck_Jutta.jpg",
+    "img": ["https://upload.wikimedia.org/wikipedia/commons/8/8e/Stolperstein_Dresden_Seestra%C3%9Fe_7.jpg"],
+    "link": {"name": "Tabellarische Übersicht der Stolpersteine in Dresden", "ref": "http://stolpersteine-dresden.de/stolpersteine-in-dresden/"},
     "coordinates": {
       "lat": 51.04812,
       "lng": 13.736936
