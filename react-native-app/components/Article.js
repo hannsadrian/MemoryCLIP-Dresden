@@ -2,6 +2,7 @@ import * as React from 'react';
 import {Text, View, StyleSheet, Image, Button, Alert, ScrollView} from 'react-native';
 import {Card, Button as B} from "react-native-paper";
 import openMap from 'react-native-open-maps';
+import * as WebBrowser from "expo-web-browser";
 
 const axios = require('axios').default;
 
@@ -55,7 +56,7 @@ class Article extends React.Component {
                             }}
                         />
                         <Text style={{paddingTop: 10, paddingBottom: 18, fontSize: 18}}>{article.article}</Text>
-                        {article.link && (<B icon="link" mode="outlined" style={{marginHorizontal: 'auto'}} onPress={() => console.log(article.link.ref)}>{article.link.name}</B>)}
+                        {article.link && (<B icon="link" mode="outlined" style={{marginHorizontal: 'auto'}} onPress={async () => await WebBrowser.openBrowserAsync(article.link.ref)}>{article.link.name}</B>)}
                     </ScrollView>
                 </View>
 
