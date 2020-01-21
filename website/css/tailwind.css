@@ -8,7 +8,7 @@
 @supports (font-variation-settings: normal) {
     * {
         font-family: "Inter var", sans-serif;
-        font-feature-settings: "liga", "frac", "cv02", "cv03", "cv04", "cv09";
+        font-feature-settings: "liga", "cv02", "cv03", "cv04", "cv09";
     }
 }
 
