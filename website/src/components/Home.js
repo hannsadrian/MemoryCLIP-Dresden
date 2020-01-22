@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {geolocated} from "react-geolocated";
+//import {geolocated} from "react-geolocated";
 import {Link} from "react-router-dom";
 import Label from "./Label";
 
@@ -88,6 +88,7 @@ class Home extends Component {
     }
 }
 
-export default geolocated({
+export default Home;
+/*export default geolocated({
     userDecisionTimeout: 5000
-})(Home);
+})(Home);*/
