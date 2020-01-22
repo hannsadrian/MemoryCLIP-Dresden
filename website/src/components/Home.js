@@ -66,7 +66,7 @@ class Home extends Component {
                     an die Bombardierung Dresdens.</p>
                 <input onChange={this.search.bind(this)} placeholder="Ort suchen"
                        className="mt-4 mb-2 p-2 px-3 max-w-md bg-gray-100 rounded w-full border-1pt border-gray-400 shadow-lg outline-none focus:outline-none focus:border-blue-600 trans"/>
-                <div className="mb-6 max-w-md">
+                <div className="pb-6 max-w-md">
                     {this.state.results.map((val, index) => (
                         <Link to={"/article/"+val.id}>
                             <div key={index}
