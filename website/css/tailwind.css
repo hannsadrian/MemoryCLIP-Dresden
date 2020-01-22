@@ -12,6 +12,14 @@
     }
 }
 
+.border-1px {
+    border-width: 1px;
+}
+
+.border-1pt {
+    border-width: 1.15pt;
+}
+
 .trans-none {
     transition: all 0s;
 }
