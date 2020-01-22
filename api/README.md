@@ -17,6 +17,7 @@ Search for a poi.
 | lat   | latitude near poi | true *(if there is no name param)* |
 | lng   | longitude near poi | true *(if there is no name param)* |
 | only  | filter. options are: `building`, `place`, `depot`, `stolperstein` | false |
+| all   | lists all entries when set to `true`; compatible with `only` | false |
 
 > to combine multiple filters just put a comma between them e.g. `building,depot`
 

@@ -32,7 +32,9 @@ app.get("/query", (req, res) => {
     })
   }
 
-  if (req.query.name) {
+  if (req.query.all === "true") {
+    res.status(200).send(query.getAll(types));
+  } else if (req.query.name) {
     res.status(200).send(query.getByName(req.query.name, types));
   } else if (req.query.lng && req.query.lat) {
     res.status(200).send(query.getByCoordinates(req.query.lat, req.query.lng, types));
