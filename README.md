@@ -19,4 +19,4 @@ use location suggestions.
 ## 🖋 Authors
 
 - **Adrian Böhme** - *Creator/Maintainer* - [Adwirawien](https://github.com/Adwirawien)
-- **Classmate** - *Texts/Ideas* - `Not on Github`
+- **Classmate** - *Research/Texts* - `Not on Github`
