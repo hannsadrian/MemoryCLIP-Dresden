@@ -36,7 +36,12 @@ export default class Start extends React.Component {
     }
 
     async locationSuggestions() {
-        let {status} = await Permissions.askAsync(Permissions.LOCATION);
+        let response = await axios.get(
+            'https://api.memoryclip.hannsadrian.de/query?all=true'
+        );
+        this.setState({results: response.data});
+
+        /*let {status} = await Permissions.askAsync(Permissions.LOCATION);
         if (status !== 'granted') {
             this.setState({
                 errorMessage: 'Permission to access location was denied',
@@ -48,7 +53,7 @@ export default class Start extends React.Component {
         let response = await axios.get(
             'https://api.memoryclip.hannsadrian.de/query?lat=' + location.coords.latitude + "&lng=" + location.coords.longitude
         );
-        this.setState({results: response.data});
+        this.setState({results: response.data});*/
     }
 
     componentDidMount() {
@@ -68,8 +73,8 @@ export default class Start extends React.Component {
                     <View style={styles.heading}>
                         <Text style={styles.title}>📚 Memory<Text style={{fontWeight: "600"}}>CLIP</Text></Text>
                         <Text style={styles.subheading}>
-                            Dieses Projekt soll eine frei wählbare Erinnerung an möglichst
-                            vielen Orten in Bezug auf die Bombardierung Dresdens bieten.
+                            Dieses Projekt bietet eine frei wählbare Erinnerung
+                            an die Bombardierung Dresdens.
                         </Text>
                     </View>
                     <View style={{flexDirection: 'row', marginTop: 10, paddingBottom: 15}}>
