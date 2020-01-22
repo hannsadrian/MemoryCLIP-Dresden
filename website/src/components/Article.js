@@ -25,7 +25,7 @@ class Article extends Component {
                     <Link to="/"><p className="uppercase text-sm font-semibold mb-3 hover:text-blue-600 trans-fast">{"<- Zurück"}</p></Link>
                     {this.state.articles.map((article, index) => (
                         <>
-                            <img className="rounded-lg mb-6" src={article.img[0]} alt=""/>
+                            <img className="rounded-lg mb-6 w-full" src={article.img[0]} alt=""/>
                             <Label type={article.type}/>
                             <h1 className="text-2xl font-medium mb-1">{article.name}</h1>
                             <p className="text-gray-900">{article.article}</p>
