@@ -43,7 +43,7 @@ class Article extends Component {
                                     <>
                                         <p className="mt-5">
                                             <a
-                                                className="p-2 rounded border-1px border-gray-400 shadow hover:shadow-md trans"
+                                                className="p-2 rounded border-1px border-gray-400 shadow hover:shadow-md trans truncate"
                                                 href={article.link.ref}
                                                 target="_blank" rel="noopener noreferrer"
                                             >
