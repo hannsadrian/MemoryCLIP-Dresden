@@ -61,7 +61,7 @@
     "name": "Seestraße 7",
     "type": "stolperstein",
     "img": ["https://upload.wikimedia.org/wikipedia/commons/8/8e/Stolperstein_Dresden_Seestra%C3%9Fe_7.jpg"],
-    "link": {"name": "Tabellarische Übersicht der Stolpersteine in Dresden", "ref": "http://stolpersteine-dresden.de/stolpersteine-in-dresden/"},
+    "link": {"name": "Übersicht der Stolpersteine in Dresden", "ref": "http://stolpersteine-dresden.de/stolpersteine-in-dresden/"},
     "coordinates": {
       "lat": 51.04812,
       "lng": 13.736936
