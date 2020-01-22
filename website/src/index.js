@@ -6,12 +6,14 @@ import {BrowserRouter, Route, Switch} from "react-router-dom";
 import "./css/tailwind.css"
 import Home from "./components/Home";
 import NotFound from "./components/NotFound";
+import Article from "./components/Article";
 
 
 ReactDOM.render(
     <BrowserRouter>
         <Switch>
             <Route exact path="/" component={Home}/>
+            <Route path="/article/:id" component={Article}/>
 
             <Route component={NotFound}/>
         </Switch>
