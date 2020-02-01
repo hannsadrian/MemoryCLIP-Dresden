@@ -1,5 +1,3 @@
-[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/J3J41APL0)
-
 # 📚 MemoryCLIP Dresden
 
 This is a project to remind of the bomb war and especially the attack on Dresden at the 13./14. February 1945.<br>
