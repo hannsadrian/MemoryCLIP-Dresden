@@ -7,12 +7,15 @@ import "./css/tailwind.css"
 import Home from "./components/Home";
 import NotFound from "./components/NotFound";
 import Article from "./components/Article";
-
+import Impress from "./components/Impress";
+import Ackee from "./components/Ackee";
 
 ReactDOM.render(
     <BrowserRouter>
+        <Ackee />
         <Switch>
             <Route exact path="/" component={Home}/>
+            <Route exact path="/impressprivacy" component={Impress} />
             <Route path="/article/:id" component={Article}/>
 
             <Route component={NotFound}/>

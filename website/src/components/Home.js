@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 //import {geolocated} from "react-geolocated";
 import {Link} from "react-router-dom";
 import Label from "./Label";
+import ImpressPrivacy from "./ImpressPrivacyButton";
 
 const axios = require("axios").default;
 
@@ -68,7 +69,7 @@ class Home extends Component {
                     an die Bombardierung Dresdens.</p>
                 <input onChange={this.search.bind(this)} placeholder="Ort suchen"
                        className="mt-4 mb-2 p-2 px-3 max-w-md bg-gray-100 rounded w-full border-1pt border-gray-400 shadow-lg outline-none focus:outline-none focus:border-blue-600 trans"/>
-                <div className="pb-6 max-w-md">
+                <div className="pb-3 max-w-md">
                     {this.state.results.map((val, index) => (
                         <div className="my-2 rounded">
                             <Link to={"/article/" + val.id}>
@@ -87,6 +88,7 @@ class Home extends Component {
                         </div>
                     ))}
                 </div>
+                <ImpressPrivacy/>
             </div>
         );
     }

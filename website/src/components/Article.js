@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from "react-router-dom";
 import Label from "./Label";
+import ImpressPrivacy from "./ImpressPrivacyButton";
 
 const axios = require("axios").default;
 
@@ -29,7 +30,7 @@ class Article extends Component {
                             <Label type={article.type}/>
                             <h1 className="text-2xl font-medium mb-1">{article.name}</h1>
                             <p className="text-gray-900">{article.article}</p>
-                            <div className="mt-6">
+                            <div className="my-6">
                                 <p>
                                     <a className="p-2 rounded border-1px border-gray-400 shadow hover:shadow-md trans"
                                        href={"https://maps.apple.com/?dirflg=w&daddr=" + article.coordinates.lat + "," + article.coordinates.lng}
@@ -56,6 +57,7 @@ class Article extends Component {
                             </div>
                         </>
                     ))}
+                    <ImpressPrivacy/>
                 </div>
             </div>
         );
