@@ -18,7 +18,6 @@ class Home extends Component {
     async search(event) {
         const query = event.target.value;
         if (query.length === 0) {
-            this.setState({results: []});
             this.locationSuggestions();
             return;
         }
