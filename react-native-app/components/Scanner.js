@@ -18,12 +18,12 @@ export default function Scanner(props) {
 
     const handleBarCodeScanned = ({ type, data }) => {
         setScanned(true);
-        if (isNaN(parseInt(data))) {
-            Alert.alert("QR Code nicht kompatibel", "");
+        if (isNaN(parseInt(data.replace("https://memoryclip.hannsadrian.de/article/", "")))) {
+            Alert.alert("QR Code nicht kompatibel" + data, "");
             navigate("Home");
         } else {
             navigate("Home");
-            navigate("Article", {id: parseInt(data)});
+            navigate("Article", {id: parseInt(data.replace("https://memoryclip.hannsadrian.de/article/", ""))});
         }
     };
 
