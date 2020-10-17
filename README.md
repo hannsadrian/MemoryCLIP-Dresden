@@ -8,8 +8,8 @@ It is a school project created by students of the 9th grade.
 ## 🤨 How does it work?
 
 You can either use the app or the website to view information about in the bomb war
-involved or destroyed buildings/places(+Stolpersteine & Mahndepots) located in Dresden.<br>
-If you are using the app it is even possible to scan QR codes potentially sticked to information boards at the buildings or<br>
+involved or destroyed buildings/places(+Stolpersteine & Mahndepots) located in Dresden.
+If you are using the app it is even possible to scan QR codes potentially sticked to information boards at the buildings or
 use location suggestions.
 
 ## 🔨 Build with
