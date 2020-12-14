@@ -1,5 +1,3 @@
-_View it [live](https://memoryclip.hannsadrian.de/)._
-
 # 📚 MemoryCLIP Dresden
 
 This is a project to remind of the bomb war and especially the attack on Dresden at the 13./14. February 1945.<br>
